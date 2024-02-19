@@ -11,85 +11,14 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link
         rel="stylesheet"
-        href="src/styles.css"
+        href="./styles.css"
     />
     <title> Multilingual AI Cosmos Poem Generator</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1> 🚀 Multilingual AI Cosmos Poem Generator 🚀 <br /></h1>
-        </header>
-
-        <main>
-            <div class="form-container">
-                <form id="poem-generator-form">
-                    <input
-                        type="text"
-                        placeholder="Enter the topic of the poem"
-                        autofocus
-                        required
-                        autocomplete="off"
-                        class="instructions"
-                        id="user-instructions"
-                    />
-                    <input
-                        type="submit"
-                        class="submit-button"
-                    />
-                </form>
-                <div class="example">ie. planets, moon, sun, etc.</div>
-            </div>
-            <div
-                class="poem hidden"
-                id="poem"
-            ></div>
-        </main>
-
-        <footer>This AI project was coded by 
-            > Aniqa Afzal using AI skills from the <a> href="https://www.shecodes.io/">SheCodes workshops for women </a> and is open-sourced on <a
-                href="https://github.com/Elegangit/AI-Poem-Generator-AA.git"
-                target="_blank"
-            > GitHub</a> and is hosted on <a
-                href="https://best-cosmos-poems-by-ai.netlify.app/"
-                target="_blank"
-            > Netlify.</a></footer>
-    </div>
-
-    
-    <script>
-        function displayPoem(response) {
-    new Typewriter("#poem", {
-        strings: response.data.answer,
-        autoStart: true,
-        delay: 1,
-        cursor: "",
-    });
-}
-
-function generatePoem(event) {
-    event.preventDefault();
-
-    let instructionsInput = document.querySelector("#user-instructions");
-    let apiKey = "130f33ffoc5t4fdc244afb86281fdf02";
-    let prompt = `User's instructions: Generate a poem about ${instructionsInput.value}`;
-    let context = "You are a poem expert and love to write short poems on planets, moon, stars and sun. Your mission is to generate a four line poem in basic HTML and seperate each line with a <br />. Then translate the poem from English to Arabic, Russian, French and Turkish in a separate paragraphs if possible. Title to the poem at the top is Universe Explored through Poems. Have a complimentary close only at the end of the poem with a <strong> element 'SheCodes AI'. Please precisely follow the user's instructions. ";
-    let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
-
-    let poemElement = document.querySelector("#poem");
-    poemElement.classList.remove("hidden");
-    poemElement.innerHTML = `<div class="generating">⏳ Generating an English poem about universe ${instructionsInput.value} with an Arabic, Russian, French and Turkish translations.</div>`;
-
-    axios.get(apiURL).then(displayPoem);
-}
-
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatePoem);
-
-    </script>
-
-    <styles> body { color: white;
+<styles> 
+    body { color: white;
     background-color: navy;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -196,7 +125,78 @@ footer {
         visibility: hidden;
     }
 }
-</styles>
+ </styles>
+    <div class="container">
+        <header>
+            <h1> 🚀 Multilingual AI Cosmos Poem Generator 🚀 <br /></h1>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="poem-generator-form">
+                    <input
+                        type="text"
+                        placeholder="Enter the topic of the poem"
+                        autofocus
+                        required
+                        autocomplete="off"
+                        class="instructions"
+                        id="user-instructions"
+                    />
+                    <input
+                        type="submit"
+                        class="submit-button"
+                    />
+                </form>
+                <div class="example">ie. planets, moon, sun, etc.</div>
+            </div>
+            <div
+                class="poem hidden"
+                id="poem"
+            ></div>
+        </main>
+
+        <footer>This AI project was coded by 
+            > Aniqa Afzal using AI skills from the <a> href="https://www.shecodes.io/">SheCodes workshops for women </a> and is open-sourced on <a
+                href="https://github.com/Elegangit/AI-Poem-Generator-AA.git"
+                target="_blank"
+            > GitHub</a> and is hosted on <a
+                href="https://best-cosmos-poems-by-ai.netlify.app/"
+                target="_blank"
+            > Netlify.</a></footer>
+    </div>
+
+    
+    <script>
+        function displayPoem(response) {
+    new Typewriter("#poem", {
+        strings: response.data.answer,
+        autoStart: true,
+        delay: 1,
+        cursor: "",
+    });
+}
+
+function generatePoem(event) {
+    event.preventDefault();
+
+    let instructionsInput = document.querySelector("#user-instructions");
+    let apiKey = "130f33ffoc5t4fdc244afb86281fdf02";
+    let prompt = `User's instructions: Generate a poem about ${instructionsInput.value}`;
+    let context = "You are a poem expert and love to write short poems on planets, moon, stars and sun. Your mission is to generate a four line poem in basic HTML and seperate each line with a <br />. Then translate the poem from English to Arabic, Russian, French and Turkish in a separate paragraphs if possible. Title to the poem at the top is Universe Explored through Poems. Have a complimentary close only at the end of the poem with a <strong> element 'SheCodes AI'. Please precisely follow the user's instructions. ";
+    let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+    let poemElement = document.querySelector("#poem");
+    poemElement.classList.remove("hidden");
+    poemElement.innerHTML = `<div class="generating">⏳ Generating an English poem about universe ${instructionsInput.value} with an Arabic, Russian, French and Turkish translations.</div>`;
+
+    axios.get(apiURL).then(displayPoem);
+}
+
+let poemFormElement = document.querySelector("#poem-generator-form");
+poemFormElement.addEventListener("submit", generatePoem);
+
+    </script>
 
     <script src="src/index.js"></script>
     
