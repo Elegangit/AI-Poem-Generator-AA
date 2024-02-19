@@ -1,0 +1,107 @@
+body { color: white;
+    background-color: navy;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #888df1;
+}
+
+.container {
+    margin: 120px auto;
+    max-width: 600px;
+  border-radius:25%;
+
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1;
+    color: #272044;
+}
+
+.form-container {
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    background-color: skyblue;
+    box-shadow: 0px 20px 60px rgba(65, 50, 100 0.08);
+    border-radius: 10px;
+}
+
+form {
+
+    display: flex;
+}
+
+.example {
+    line-height: 1.5;
+    margin-top: 5px;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.instructions {
+    padding: 16px;
+    border: 1px solid rgba(39, 33, 66, 0.5);
+    width: 80%;
+    border-radius: 50px;
+    line-height: 20px;
+    color: #272044;
+}
+
+.submit-button {
+    margin-left: 10px;
+    background: #888df1;
+    color: white;
+    border: none;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 50px;
+    padding: 14px 24px;
+}
+
+.poem {
+    font-size: 16px;
+    background-color: #navy;
+    padding: 20px;
+    line-height: 2;
+    color:white;
+    border-left: 3px solid #885df1;
+    box-shadow: 0px 20px 60px rgba(65, 50, 100 0.03);
+}
+
+.hidden {
+    display: none;
+}
+
+.poem strong {
+    color: #888df1;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.generating {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
