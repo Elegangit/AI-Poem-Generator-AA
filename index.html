@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="src/styles.css"
+    />
+    <title>AI Cosmos Poem Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Poem Generator <br /></h1>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="poem-generator-form">
+                    <input
+                        type="text"
+                        placeholder="Enter the topic of the poem"
+                        autofocus
+                        required
+                        autocomplete="off"
+                        class="instructions"
+                        id="user-instructions"
+                    />
+                    <input
+                        type="submit"
+                        class="submit-button"
+                    />
+                </form>
+                <div class="example">ie. planets, moon, sun, etc.</div>
+            </div>
+            <div
+                class="poem hidden"
+                id="poem"
+            ></div>
+        </main>
+
+        <footer>This AI project was coded by 
+            > Aniqa Afzal using AI skills from the SheCodes workshops for women and is open-sourced on <a
+                href="https://github.com/Elegangit/AI-Poem-Generator-AA"
+                target="_blank"
+            > GitHub</a> and is hosted on <a
+                href="https://best-cosmos-poems-by-ai.netlify.app/"
+                target="_blank"
+            > Netlify.</a></footer>
+    </div>
+
+    <script src="src/index.js"></script>
+</body>
+
+</html>
